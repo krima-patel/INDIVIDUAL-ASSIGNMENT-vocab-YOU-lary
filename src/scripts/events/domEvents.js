@@ -1,23 +1,23 @@
-// const domEvents = (uid) => {
-//   document.querySelector('#main-container').addEventListener('click', (e) => {
-//     // EVENT TO DELETE CARD
-//     if (e.target.id.includes('delete-card')) {
-//       if (window.confirm('Sure you want to delete?')) {
-//       }
-//     }
+import { deleteCard, getSingleCard } from '../../api/vocabData';
+import addCardForm from '../components/forms/addCardForm';
+import showCards from '../components/pages/cards';
 
-//     // EVENT TO ADD CARD
-//     if (e.target.id.includes('add-card-btn')) {
-//       console.warn('ADD BOOK')
-//     }
+const domEvents = (uid) => {
+  document.querySelector('#main-container').addEventListener('click', (e) => {
+    if (e.target.id.includes('delete-card')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      deleteCard(firebaseKey).then((cardsArray) => showCards(cardsArray));
+    }
 
-//     // EVENT TO EDIT CARD
-//     if (e.target.id.includes('edit-card-btn')) {
-//       console.warn('EDIT CARD')
-//     }
+    if (e.target.id.includes('edit-card-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleCard(firebaseKey).then((cardObject) => addCardForm(uid, cardObject));
+    }
 
-//     // EVENT TO VIEW CARD
-//     if (e.target.id.includes('view-card-btn')) {
-//     }
+    if (e.target.id.includes('add-card-btn')) {
+      addCardForm({}, uid);
+    }
+  });
+};
 
-// export default domEvents;
+export default domEvents;

@@ -13,10 +13,10 @@ const addCardForm = (obj = {}) => {
     <input type="text" class="form-control" id="definition" placeholder="What does it mean?" value="${obj.definition || ''}" required>
   </div>
   <div class="form-group">
-    <label for="category">Langauge</label>
-    <input type="text" class="form-control" id="category" placeholder="Which language?" value="${obj.category || ''}" required>
+    <label for="category">Language</label>
+    <input type="text" class="form-control" id="category" placeholder="Which language does it go with?" value="${obj.category || ''}" required>
   </div>
-  <button type="submit" class="btn btn-primary mt-3">Submit Vocab</button>
+  <button type="submit" class="btn btn-success mt-3">Submit Vocab</button>
 </form>`;
 
   renderToDOM('#form-container', domString);

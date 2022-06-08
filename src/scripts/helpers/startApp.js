@@ -7,6 +7,7 @@ import navBar from '../components/navBar';
 import { getCards } from '../../api/vocabData';
 import domEvents from '../events/domEvents';
 import filterButtons from '../components/buttons/filterButtons';
+import filterButtonEvents from '../events/filterButtonEvents';
 
 const startApp = (user) => {
   domBuilder();
@@ -16,6 +17,7 @@ const startApp = (user) => {
   filterButtons();
   logoutButton();
   navigationEvents(user.uid);
+  filterButtonEvents(user.uid);
   getCards(user.uid).then((cardsArray) => showCards(cardsArray));
 };
 

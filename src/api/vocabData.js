@@ -46,10 +46,37 @@ const updateCard = (cardObject) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const htmlLang = (uid) => new Promise((resolve, reject) => {
+  getCards(uid)
+    .then((cardsByUser) => {
+      const htmlCards = cardsByUser.filter((card) => card.lang === 'html');
+      resolve(htmlCards);
+    }).catch((error) => reject(error));
+});
+
+const cssLang = (uid) => new Promise((resolve, reject) => {
+  getCards(uid)
+    .then((cardsByUser) => {
+      const cssCards = cardsByUser.filter((card) => card.lang === 'css');
+      resolve(cssCards);
+    }).catch((error) => reject(error));
+});
+
+const javascriptLang = (uid) => new Promise((resolve, reject) => {
+  getCards(uid)
+    .then((cardsByUser) => {
+      const javascriptCards = cardsByUser.filter((card) => card.lang === 'javascript');
+      resolve(javascriptCards);
+    }).catch((error) => reject(error));
+});
+
 export {
   getCards,
   getSingleCard,
   createCard,
   deleteCard,
-  updateCard
+  updateCard,
+  htmlLang,
+  cssLang,
+  javascriptLang
 };

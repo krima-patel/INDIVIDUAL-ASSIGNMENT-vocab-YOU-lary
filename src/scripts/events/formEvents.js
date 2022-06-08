@@ -9,7 +9,7 @@ const formEvents = (uid) => {
       const cardObject = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
-        category: document.querySelector('#category').value,
+        category: document.querySelector('#select-category').value,
         uid
       };
       createCard(cardObject, uid).then((cardsArray) => showCards(cardsArray));
@@ -21,7 +21,7 @@ const formEvents = (uid) => {
       const cardObject = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
-        category: document.querySelector('#category').value,
+        category: document.querySelector('#select-category').value,
         firebaseKey,
         uid
       };

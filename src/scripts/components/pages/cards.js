@@ -8,9 +8,6 @@ const emptyCards = () => {
 const showCards = (array) => {
   clearDom();
 
-  // const btnString = '<button class="btn btn-primary btn-lg mb-4" id="add-card-btn">Create a Vocab Entry</button>';
-  // renderToDOM('#add-button', btnString);
-
   if (array.length) {
     let domString = '';
     array.forEach((item) => {
@@ -19,8 +16,8 @@ const showCards = (array) => {
         <h5 class="card-title">${item.title}</h5>
         <h6 class="card-subtitle mb-2 text-muted">${item.category}</h6>
         <p class="card-text">${item.definition}</p>
-        <button type="button" class="btn btn-primary" id="edit-card-btn--${item.firebaseKey}">Edit Card</button>
-        <button type="button" class="btn btn-danger" id="delete-card-btn--${item.firebaseKey}">Delete Card</button>
+        <button type="button" class="btn btn-outline-info" id="edit-card-btn--${item.firebaseKey}">Edit Card</button>
+        <button type="button" class="btn btn-outline-danger" id="delete-card-btn--${item.firebaseKey}">Delete Card</button>
       </div>
     </div>`;
     });

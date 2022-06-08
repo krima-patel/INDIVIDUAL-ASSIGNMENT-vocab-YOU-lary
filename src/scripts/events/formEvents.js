@@ -25,7 +25,7 @@ const formEvents = (uid) => {
         firebaseKey,
         uid
       };
-      updateCard(uid, cardObject).then(showCards);
+      updateCard(cardObject, uid).then(showCards);
     }
   });
 };

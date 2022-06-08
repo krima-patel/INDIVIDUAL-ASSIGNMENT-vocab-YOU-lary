@@ -14,19 +14,6 @@ const navBar = () => {
             <li class="nav-item">
               <a class="nav-link" href="#" id="add-card-btn">Create Entry</a>
             </li>
-              <a class="nav-link" href="#" id="all-cards">
-                All Vocab Cards<span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="html">HTML</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="css">CSS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="javascript">JavaScript</a>
-            </li>
             <li>
             <input
               class="form-control mr-sm-2"

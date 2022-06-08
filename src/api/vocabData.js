@@ -49,7 +49,8 @@ const updateCard = (cardObject) => new Promise((resolve, reject) => {
 const htmlLang = (uid) => new Promise((resolve, reject) => {
   getCards(uid)
     .then((cardsByUser) => {
-      const htmlCards = cardsByUser.filter((card) => card.lang === 'html');
+      console.warn(cardsByUser);
+      const htmlCards = cardsByUser.filter((card) => card.category === 'html');
       resolve(htmlCards);
     }).catch((error) => reject(error));
 });
@@ -57,7 +58,7 @@ const htmlLang = (uid) => new Promise((resolve, reject) => {
 const cssLang = (uid) => new Promise((resolve, reject) => {
   getCards(uid)
     .then((cardsByUser) => {
-      const cssCards = cardsByUser.filter((card) => card.lang === 'css');
+      const cssCards = cardsByUser.filter((card) => card.category === 'css');
       resolve(cssCards);
     }).catch((error) => reject(error));
 });
@@ -65,7 +66,7 @@ const cssLang = (uid) => new Promise((resolve, reject) => {
 const javascriptLang = (uid) => new Promise((resolve, reject) => {
   getCards(uid)
     .then((cardsByUser) => {
-      const javascriptCards = cardsByUser.filter((card) => card.lang === 'javascript');
+      const javascriptCards = cardsByUser.filter((card) => card.category === 'javascript');
       resolve(javascriptCards);
     }).catch((error) => reject(error));
 });

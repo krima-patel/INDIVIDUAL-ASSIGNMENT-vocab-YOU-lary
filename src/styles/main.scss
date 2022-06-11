@@ -3,8 +3,8 @@
 
 
 body {
-  background-color: rgb(141, 141, 246);
-  color: rgb(90, 65, 200);
+  background-color: #ff81c9;
+  color: #ff0092;
   text-align: center;
   margin-top: 100px;
 }
@@ -14,17 +14,46 @@ body {
 }
 
 #cards-container {
-  margin: 30px 30px;
   text-align: left;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 900;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
 }
 
 .card {
-  margin-bottom: 30px;
+  margin: 20px 20px;
 }
 
 #form-container {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin: 100px;
+  width: 60%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+img {
+  border-radius: 50%;
+  border: solid #cd88fc;
+}
+
+#html-btn {
+  margin: 10px;
+  color: #ff0092;
+}
+
+#css-btn {
+  margin: 10px;
+  color: #ff0092;
+}
+
+#javascript-btn {
+  margin: 10px;
+  color: #ff0092;
+}
+
+#view-all-btn {
+  margin: 10px;
+  color: #ff0092;
 }

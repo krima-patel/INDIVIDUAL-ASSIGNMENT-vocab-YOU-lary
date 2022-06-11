@@ -5,11 +5,11 @@ const formEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id.includes('submit-card')) {
-      console.warn('Clicked submit card', e.target.id);
       const cardObject = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
         category: document.querySelector('#select-category').value,
+        time: Math.floor(Date.now() / 1000),
         uid
       };
       createCard(cardObject, uid).then((cardsArray) => showCards(cardsArray));
@@ -17,12 +17,12 @@ const formEvents = (uid) => {
 
     if (e.target.id.includes('update-card')) {
       const [, firebaseKey] = e.target.id.split('--');
-      console.warn('Clicked update card', e.target.id);
       const cardObject = {
         title: document.querySelector('#title').value,
         definition: document.querySelector('#definition').value,
         category: document.querySelector('#select-category').value,
         firebaseKey,
+        time: Math.floor(Date.now() / 1000),
         uid
       };
       updateCard(cardObject, uid).then(showCards);
